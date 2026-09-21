@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Nest Bandra | Feels Like Home — Cafe & Coffee Bar</title>
+  <meta name="description" content="Great food, better conversations and a warm space in the heart of Bandra. Specialty coffee, all-day breakfast, dim sums, and artisanal toasts.">
+  
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, Caveat (Handwritten) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2326382D'/><path d='M30 65 Q50 85 70 65 C68 45 32 45 30 65 Z' fill='%23FAF7F2'/><path d='M40 38 Q50 22 60 38' stroke='%23FAF7F2' stroke-width='4' fill='none'/></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="top-announcement" aria-label="Announcement">
+    <span><span class="badge">Bandra West</span> Hill Road • Open Daily 11:00 AM – 1:30 AM</span>
+    <span>•</span>
+    <span>🌿 Jain & Vegan Options Available</span>
+    <span>•</span>
+    <span>☕ Specialty Single Origin Pour-overs</span>
+  </aside>
+
+  <!-- Sticky Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo" aria-label="The Nest Bandra Home">
+        <img src="assets/images/nest_wood_stamp.png" alt="The Nest Logo Stamp" class="logo-image" onerror="this.style.display='none'">
+        <div class="brand-logo-text">
+          <span class="brand-title">the nest</span>
+          <span class="brand-subtitle">FEELS LIKE HOME</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#story">About</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Header Actions -->
+      <div class="nav-actions">
+        <!-- Ambient Sound Toggle -->
+        <button id="soundToggleBtn" class="sound-toggle-btn" title="Toggle cozy cafe ambient sounds">
+          <span>🎧</span> Cafe Vibe
+        </button>
+
+        <!-- Order / Reserve CTA Button -->
+        <button class="btn-primary" onclick="openModal('reserveModal')">
+          Order / Reserve
+        </button>
+
+        <!-- Order Tray Cart Button -->
+        <button class="cart-btn" onclick="toggleCartDrawer()" aria-label="View Order Tray">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span id="cartBadge" class="cart-badge">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger-btn" onclick="toggleMobileNav()" aria-label="Toggle Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div id="mobileNav" class="mobile-nav-panel" style="display:none;">
+    <a href="#home" onclick="toggleMobileNav()">Home</a>
+    <a href="#menu" onclick="toggleMobileNav()">Menu</a>
+    <a href="#experiences" onclick="toggleMobileNav()">Experiences</a>
+    <a href="#story" onclick="toggleMobileNav()">About</a>
+    <a href="#visit" onclick="toggleMobileNav()">Visit & Hours</a>
+    <button class="btn-primary" style="margin-top:12px; width:100%; justify-content:center;" onclick="toggleMobileNav(); openModal('reserveModal');">
+      Order / Reserve
+    </button>
+  </div>
+
+  <main>
+    <!-- =========================================
+         HERO SECTION (Exact Mockup Match)
+         ========================================= -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Left Content Column -->
+        <div class="hero-content">
+          <span class="hero-eyebrow">THE NEST BANDRA</span>
+          <h1 class="hero-title">Your<br>Second Home.</h1>
+          <p class="hero-desc">
+            Great food, better conversations and a warm space in the heart of Bandra.
+          </p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn-primary">
+              Explore Menu →
+            </a>
+            <a href="#visit" class="btn-secondary">
+              Visit Us
+            </a>
+          </div>
+
+          <!-- Hero Footer Carousel Bar -->
+          <div class="hero-footer-bar">
+            <div class="hero-indicators">
+              <span class="indicator-item active">01</span>
+              <span>/</span>
+              <span class="indicator-item">02</span>
+              <span>/</span>
+              <span class="indicator-item">03</span>
+            </div>
+            <div class="hero-location-tag">
+              — HILL ROAD — BANDRA —
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Column -->
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <img src="assets/images/hero_coffee.png" alt="Iced cold brew on sunlit rustic table at The Nest Bandra" />
+            <div class="hero-badge-overlay">
+              <p>Good Coffee<br>Brighter Days</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         OUR MENU SECTION
+         ========================================= -->
+    <section id="menu" class="menu-section">
+      <div class="container">
+        <!-- Section Header Row -->
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h2>
+              Our Menu 
+              <span class="title-script">good food. good mood</span>
+            </h2>
+            <p class="section-subtitle">
+              From fresh brews to comforting meals, explore flavours made for every part of your day.
+            </p>
+          </div>
+          <button class="view-full-menu-btn" onclick="openModal('fullMenuModal')">
+            View Full Menu →
+          </button>
+        </div>
+
+        <!-- Category & Dietary Controls -->
+        <div class="menu-controls">
+          <!-- Main Category Tabs -->
+          <div class="filter-tabs-scroll">
+            <div class="filter-tabs">
+              <button class="filter-tab active" onclick="filterCategory('all', this)">All</button>
+              <button class="filter-tab" onclick="filterCategory('coffee', this)">Coffee & Brews</button>
+              <button class="filter-tab" onclick="filterCategory('breakfast', this)">All Day Breakfast</button>
+              <button class="filter-tab" onclick="filterCategory('sandwiches', this)">Toasts & Sandwiches</button>
+              <button class="filter-tab" onclick="filterCategory('shares', this)">Shares & Small Plates</button>
+              <button class="filter-tab" onclick="filterCategory('dimsums', this)">Dim Sums (5 Pcs)</button>
+              <button class="filter-tab" onclick="filterCategory('soups-salads', this)">Soups & Salads</button>
+              <button class="filter-tab" onclick="filterCategory('desserts', this)">Desserts & Bowls</button>
+            </div>
+          </div>
+
+          <!-- Secondary Dietary & Search Bar -->
+          <div class="menu-secondary-bar">
+            <div class="dietary-filters">
+              <button class="dietary-btn active" onclick="filterDiet('all', this)">All Items</button>
+              <button class="dietary-btn" onclick="filterDiet('veg', this)">
+                <span class="dot-indicator dot-veg"></span> Veg
+              </button>
+              <button class="dietary-btn" onclick="filterDiet('nonveg', this)">
+                <span class="dot-indicator dot-nonveg"></span> Non-Veg
+              </button>
+              <button class="dietary-btn" onclick="filterDiet('jain', this)">
+                <span class="dot-indicator dot-jain"></span> Jain Available
+              </button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="menu-search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" placeholder="Search coffee, toasts, dim sums..." oninput="handleSearch(event)">
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Menu Cards Grid -->
+        <div id="menuGrid" class="menu-grid">
+          <!-- Injected dynamically by app.js -->
+        </div>
+
+        <!-- Load More / Full Menu Trigger -->
+        <div class="menu-load-more-wrap">
+          <button class="load-more-btn" onclick="openModal('fullMenuModal')">
+            Explore Complete 40+ Dish Physical Menu ↓
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FEATURE SPOTLIGHT BANNER: NEW AT THE NEST
+         ========================================= -->
+    <section class="spotlight-banner">
+      <div class="container spotlight-grid">
+        <!-- Content -->
+        <div class="spotlight-content">
+          <span class="spotlight-tag">NEW AT THE NEST</span>
+          <h2 class="spotlight-title">Pistachio<br>Iced Latte</h2>
+          <p class="spotlight-desc">
+            A refreshing blend of espresso, cold milk and real pistachio — nutty, smooth, and made for slow days.
+          </p>
+          <div class="spotlight-btn-wrap">
+            <button class="btn-white" onclick="openPistachioCustomizer()">
+              Try It Now →
+            </button>
+          </div>
+        </div>
+
+        <!-- Spotlight Image -->
+        <div class="spotlight-image-wrap">
+          <img src="assets/images/banner_pistachio.png" alt="Pistachio Iced Latte garnished with crushed pistachios" />
+          <div class="spotlight-script-overlay">
+            Small Sips<br>Happier Days
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         EXPERIENCES SECTION
+         ========================================= -->
+    <section id="experiences" class="experiences-section">
+      <div class="container">
+        <div class="section-title-wrap">
+          <h2>Experiences at The Nest</h2>
+          <p class="section-subtitle">More than a cafe — a community living room for sunny mornings, creative craft, and intimate gatherings.</p>
+        </div>
+
+        <div class="exp-grid">
+          <!-- Breakfast Card -->
+          <div class="exp-card">
+            <div class="exp-image">
+              <img src="assets/images/exp_breakfast.png" alt="Avocado toast and morning breakfast at The Nest" />
+            </div>
+            <div class="exp-body">
+              <h3 class="exp-title">Breakfast</h3>
+              <p class="exp-desc">Bright mornings, better days.</p>
+              <a href="#menu" class="exp-link" onclick="filterCategory('breakfast', null)">Explore →</a>
+            </div>
+          </div>
+
+          <!-- Workshops Card -->
+          <div class="exp-card">
+            <div class="exp-image">
+              <img src="assets/images/exp_workshops.png" alt="Workshop community table with plants and stationery" />
+            </div>
+            <div class="exp-body">
+              <h3 class="exp-title">Workshops</h3>
+              <p class="exp-desc">Learn. Create. Belong.</p>
+              <a href="javascript:void(0)" class="exp-link" onclick="showToast('Next workshop: Coffee Cupping & Manual Brew Masterclass this Saturday at 11 AM!')">See Upcoming →</a>
+            </div>
+          </div>
+
+          <!-- Celebrations Card -->
+          <div class="exp-card">
+            <div class="exp-image">
+              <img src="assets/images/exp_celebrations.png" alt="Candlelit celebration table with flowers" />
+            </div>
+            <div class="exp-body">
+              <h3 class="exp-title">Celebrations</h3>
+              <p class="exp-desc">Make it memorable at The Nest.</p>
+              <a href="javascript:void(0)" class="exp-link" onclick="openModal('reserveModal')">Enquire Now →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         SLOW LIVING STORY & ATMOSPHERE
+         ========================================= -->
+    <section id="story" class="story-section">
+      <div class="container story-grid">
+        <div class="story-content">
+          <span class="hero-eyebrow">OUR PHILOSOPHY</span>
+          <h2>A slower pace in the heart of Bandra.</h2>
+          <p>
+            Tucked away along bustling Hill Road, The Nest was born from a simple yearning: to create a sanctuary where time softens, conversations linger, and every plate feels like home.
+          </p>
+          <p>
+            Whether you are sinking into an armchair with your morning cold brew, sharing dim sums with childhood friends, or working on your next passion project — you belong here.
+          </p>
+
+          <div class="story-pillars">
+            <div class="pillar-item">
+              <span class="pillar-title">🌾 Artisanal Sourdough</span>
+              <span class="pillar-desc">Fermented for 36 hours and baked daily with French butter.</span>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-title">☕ Single Origin Brews</span>
+              <span class="pillar-desc">Sourced ethically from shade-grown estates in Chikmagalur.</span>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-title">🐾 Pet Friendly</span>
+              <span class="pillar-desc">Our verandah welcomes your furry companions with fresh treats.</span>
+            </div>
+            <div class="pillar-item">
+              <span class="pillar-title">🌱 Inclusive Kitchen</span>
+              <span class="pillar-desc">Dedicated Jain, Vegan, and gluten-conscious preparations.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-stamp-wrap">
+          <img src="assets/images/nest_wood_stamp.png" alt="The Nest seal" onerror="this.src='assets/images/logo_nav.png'">
+          <span class="stamp-caption">Feels Like Home.</span>
+          <p style="margin-top: 10px; font-size: 0.95rem; color: var(--color-text-muted); max-width: 320px;">
+            "We serve memories, slow sips, and heartwarming food from 11:00 AM until past midnight."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         INFO & CONTACT SECTION
+         ========================================= -->
+    <section id="visit" class="info-section">
+      <div class="container info-grid">
+        <!-- Location -->
+        <div class="info-card">
+          <div class="info-icon">📍</div>
+          <div class="info-content">
+            <h4>Hill Road, Bandra</h4>
+            <p>Mumbai, Maharashtra 400050<br><span style="font-size:0.8rem; color:var(--color-terracotta);">Opposite St. Peter's Church</span></p>
+          </div>
+        </div>
+
+        <!-- Timing -->
+        <div class="info-card">
+          <div class="info-icon">🕒</div>
+          <div class="info-content">
+            <h4>Open Daily</h4>
+            <p>11:00 AM – 1:30 AM<br><span style="font-size:0.8rem; color:var(--color-forest-light);">Breakfast, Lunch & Late Night</span></p>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="info-card">
+          <div class="info-icon">📷</div>
+          <div class="info-content">
+            <h4>Follow Us</h4>
+            <p><a href="https://instagram.com" target="_blank" style="color:var(--color-text-main); font-weight:600;">@thenestbandra</a><br><span style="font-size:0.8rem; color:var(--color-text-muted);">Tag us in your coffee stories</span></p>
+          </div>
+        </div>
+
+        <!-- Quote -->
+        <div class="info-quote-col">
+          <div class="info-quote">
+            Good People,<br>Better Coffee
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Strip -->
+    <section class="map-strip">
+      <div class="container">
+        <div class="map-card-container">
+          <!-- Stylized Google Map Embed centered on Hill Road, Bandra -->
+          <iframe 
+            class="map-frame"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15086.11326442657!2d72.8252277!3d19.0560867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c917b2f6ef85%3A0xc06e2dc0a2cfa029!2sHill%20Rd%2C%20Bandra%20West%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1695300000000!5m2!1sen!2sin"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="The Nest Bandra Google Map Location">
+          </iframe>
+          <div class="map-details">
+            <h3>Finding The Nest</h3>
+            <p>We are nestled quietly along Hill Road in Bandra West, just a few minutes from Bandra Bandstand and Carter Road.</p>
+            <p>Valet parking is available on weekends. Walk-ins are always welcomed warmly!</p>
+            <div>
+              <button class="btn-primary" onclick="openModal('reserveModal')">
+                Book a Cozy Table
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================
+       FOOTER
+       ========================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>the nest</h3>
+          <p>
+            A warm neighborhood sanctuary celebrating artisanal coffee, comfort food, and the spirited soul of Bandra. Feels like home.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#experiences">Morning Breakfast</a></li>
+            <li><a href="#experiences">Weekend Workshops</a></li>
+            <li><a href="#story">Our Philosophy</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('fullMenuModal')">Digital Menu Board</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#visit">Location & Hours</a></li>
+            <li><a href="tel:+919820012345">+91 98200 12345</a></li>
+            <li><a href="mailto:hello@thenestbandra.com">hello@thenestbandra.com</a></li>
+            <li><a href="javascript:void(0)" onclick="openModal('reserveModal')">Table Reservations</a></li>
+            <li><a href="javascript:void(0)" onclick="showToast('Private dining mezzanine bookings: events@thenestbandra.com')">Private Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Join The Nest Family</h4>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.7); margin-bottom:10px;">
+            Subscribe for secret seasonal drops, acoustic session invites, and workshop registrations.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 The Nest Bandra. All rights reserved. Feels Like Home.
+        </div>
+        <div>
+          * We levy 5% service charge & taxes as applicable. Please inform our staff of any dietary restrictions or Jain preferences.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================
+       INTERACTIVE MODALS & DRAWERS
+       ========================================= -->
+
+  <!-- 1. CART & ORDER SLIDE DRAWER -->
+  <div id="cartOverlay" class="cart-drawer-overlay" onclick="toggleCartDrawer()"></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-label="Your Order Tray">
+    <div class="cart-header">
+      <h3>Your Order Tray</h3>
+      <button class="modal-close-btn" onclick="toggleCartDrawer()">✕</button>
+    </div>
+    
+    <div id="cartItemsList" class="cart-items-list">
+      <!-- Injected by app.js -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="bill-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">₹ 0</span>
+      </div>
+      <div class="bill-row">
+        <span>Service Charge (5%)</span>
+        <span id="cartServiceCharge">₹ 0</span>
+      </div>
+      <div class="bill-row">
+        <span>Taxes & GST (5%)</span>
+        <span id="cartGst">₹ 0</span>
+      </div>
+      <div class="bill-row bill-total">
+        <span>Grand Total</span>
+        <span id="cartGrandTotal">₹ 0</span>
+      </div>
+      <button class="cart-checkout-btn" onclick="checkoutOrder()">
+        Send Order to Kitchen / Barista →
+      </button>
+    </div>
+  </aside>
+
+  <!-- 2. TABLE RESERVATION MODAL -->
+  <div id="reserveModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeModal('reserveModal')">✕</button>
+      <div class="modal-header">
+        <h3>Reserve a Table at The Nest</h3>
+        <p>Whether for morning coffee, hearty brunch, or late-night dinners, we'll have your spot ready.</p>
+      </div>
+
+      <form id="reserveForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resName">Your Full Name</label>
+            <input type="text" id="resName" placeholder="e.g. Maya Merchant" required />
+          </div>
+          <div class="form-group">
+            <label for="resPhone">Phone / WhatsApp</label>
+            <input type="tel" id="resPhone" placeholder="+91 98200 00000" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resGuests">Number of Guests</label>
+            <select id="resGuests">
+              <option value="1 Guest">1 Guest (Solo coffee & book)</option>
+              <option value="2 Guests" selected>2 Guests (Table for two)</option>
+              <option value="3-4 Guests">3–4 Guests (Brunch group)</option>
+              <option value="5-8 Guests">5–8 Guests (Family / Friends)</option>
+              <option value="8+ Guests">8+ Guests (Celebration gathering)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="resZone">Seating Preference</label>
+            <select id="resZone">
+              <option value="Sunlit Verandah">Sunlit Verandah (Pet Friendly)</option>
+              <option value="Cozy Library Corner">Cozy Library Corner</option>
+              <option value="Coffee Bar Counter">Coffee Bar Counter</option>
+              <option value="Main Indoor Dining">Main Indoor AC Dining</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resDate">Reservation Date</label>
+            <input type="date" id="resDate" required value="2026-09-22" />
+          </div>
+          <div class="form-group">
+            <label for="resTime">Preferred Time Slot</label>
+            <select id="resTime">
+              <option value="11:30 AM">11:30 AM (Late Morning Brew)</option>
+              <option value="1:00 PM">1:00 PM (Lunch)</option>
+              <option value="4:00 PM">4:00 PM (Sunset Coffee & Snacks)</option>
+              <option value="7:30 PM">7:30 PM (Evening Dinner)</option>
+              <option value="9:30 PM">9:30 PM (Late Night Chill)</option>
+              <option value="11:00 PM">11:00 PM (Midnight Bites)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resNotes">Special Requests (Dietary, High Chair, Birthday Decor)</label>
+          <textarea id="resNotes" rows="2" placeholder="Let us know if you need Jain food or celebrating a special occasion..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; padding:12px; margin-top:8px;">
+          Confirm Table Booking →
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. FULL PHYSICAL MENU MODAL (Retro Dark Green Chalkboard Board) -->
+  <div id="fullMenuModal" class="modal-overlay full-menu-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn" style="color:#FFF; background:rgba(255,255,255,0.15);" onclick="closeModal('fullMenuModal')">✕</button>
+      
+      <div class="full-menu-header">
+        <h2 class="full-menu-title">THE NEST MENU</h2>
+        <p style="color:#B5CEBF; font-size:0.95rem;">Feels Like Home • Hill Road, Bandra</p>
+        <img src="assets/images/nest_wood_stamp.png" alt="Stamp" class="full-menu-stamp" onerror="this.style.display='none'">
+      </div>
+
+      <!-- Quick category filter tabs inside modal -->
+      <div class="full-menu-tabs">
+        <button class="full-menu-tab active" onclick="filterFullMenu('all', this)">All</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('breakfast', this)">Breakfast</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('sandwiches', this)">Toasts & Sandwiches</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('shares', this)">Shares</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('dimsums', this)">Dim Sums</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('soups-salads', this)">Soups & Salads</button>
+        <button class="full-menu-tab" onclick="filterFullMenu('coffee', this)">Brews</button>
+      </div>
+
+      <!-- Full Menu Items List Grid -->
+      <div id="fullMenuItemsGrid" class="full-menu-items-grid">
+        <!-- Injected by app.js -->
+      </div>
+
+      <div style="margin-top:20px; text-align:center; font-size:0.75rem; color:#8FA899;">
+        We levy 5% service charge & taxes as applicable. Please notify staff of any dietary preferences.
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. PISTACHIO ICED LATTE CUSTOMIZER MODAL -->
+  <div id="customizerModal" class="modal-overlay">
+    <div class="modal-card" style="max-width:500px;">
+      <button class="modal-close-btn" onclick="closeModal('customizerModal')">✕</button>
+      
+      <div class="modal-header">
+        <span class="spotlight-tag" style="color:var(--color-terracotta);">Specialty Drink</span>
+        <h3 style="margin-top:4px;">Customize Pistachio Iced Latte</h3>
+        <p>Tailor your cup to your exact taste preferences.</p>
+      </div>
+
+      <div class="form-group">
+        <label for="customMilk">Choice of Milk</label>
+        <select id="customMilk">
+          <option value="whole">Whole Dairy Milk (Creamy & classic)</option>
+          <option value="oat">Artisanal Oat Milk (+₹40)</option>
+          <option value="almond">Roasted Almond Milk (+₹40)</option>
+          <option value="skim">Light Skim Milk</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="customSweet">Sweetness Level</label>
+        <select id="customSweet">
+          <option value="Standard Sweet">Standard Sweetness (Balanced pistachio puree)</option>
+          <option value="Less Sweet">Less Sweet (Subtle sweetness)</option>
+          <option value="Unsweetened">Unsweetened (Nutty & espresso forward)</option>
+        </select>
+      </div>
+
+      <div class="form-group" style="display:flex; align-items:center; gap:10px; margin-top:8px;">
+        <input type="checkbox" id="customShot" style="width:auto; cursor:pointer;" />
+        <label for="customShot" style="margin-bottom:0; cursor:pointer;">Add Extra Single Origin Espresso Shot (+₹60)</label>
+      </div>
+
+      <button class="btn-primary" style="width:100%; justify-content:center; margin-top:16px; padding:12px;" onclick="addCustomizedPistachio()">
+        Add to Order Tray (from ₹290)
+      </button>
+    </div>
+  </div>
+
+  <!-- 5. CONFIRMATION MODAL -->
+  <div id="confirmModal" class="modal-overlay">
+    <div class="modal-card" style="max-width:480px; text-align:center;">
+      <button class="modal-close-btn" onclick="closeModal('confirmModal')">✕</button>
+      <div style="font-size:3.5rem; margin-bottom:12px;">🌿</div>
+      <h3 id="confirmTitle" style="font-family:var(--font-serif); font-size:1.8rem; color:var(--color-forest); margin-bottom:8px;">
+        Success!
+      </h3>
+      <p id="confirmSubtitle" style="color:var(--color-text-muted); font-size:1rem; margin-bottom:16px;">
+        Your request has been received.
+      </p>
+      <div id="confirmDetails" style="background:var(--bg-secondary); padding:14px; border-radius:12px; font-weight:600; color:var(--color-text-main); font-size:0.95rem; margin-bottom:14px;">
+        Details
+      </div>
+      <p id="confirmNote" style="font-size:0.82rem; color:var(--color-text-light); margin-bottom:24px;">
+        Note
+      </p>
+      <button class="btn-primary" style="width:100%; justify-content:center; padding:12px;" onclick="closeModal('confirmModal')">
+        Awesome, Thank You!
+      </button>
+    </div>
+  </div>
+
+  <!-- Core JavaScript -->
+  <script src="app.js"></script>
+  <script>
+    function toggleMobileNav() {
+      const panel = document.getElementById('mobileNav');
+      if (panel.style.display === 'none' || panel.style.display === '') {
+        panel.style.display = 'flex';
+        panel.style.flexDirection = 'column';
+        panel.style.padding = '16px 24px';
+        panel.style.background = '#FAF7F2';
+        panel.style.borderBottom = '1px solid #E8E3DA';
+        panel.style.gap = '12px';
+      } else {
+        panel.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
